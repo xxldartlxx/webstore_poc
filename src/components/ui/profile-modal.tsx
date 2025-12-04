@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import { motion } from "framer-motion";
 import { getCategoryIcon } from "@/lib/category-icons";
+import { useMediaQuery } from "@/hooks/useMediaQuery";
 
 interface Provider {
     id: number;
@@ -34,6 +35,8 @@ interface ProfileModalProps {
 }
 
 export function ProfileModal({ provider, open, onOpenChange }: ProfileModalProps) {
+    const isMobile = useMediaQuery("(max-width: 640px)");
+
     if (!provider) return null;
 
     // Mock additional data that would come from an API
@@ -77,7 +80,7 @@ export function ProfileModal({ provider, open, onOpenChange }: ProfileModalProps
     };
 
     return (
-        <Dialog open={open} onOpenChange={onOpenChange} variant="sheet">
+        <Dialog open={open} onOpenChange={onOpenChange} variant={isMobile ? "sheet" : "default"}>
             <DialogContent className="p-0 w-full sm:max-w-3xl flex flex-col">
                 <DialogHeader className="px-4 pt-4 pb-3 sm:px-6 sm:pt-6 sm:pb-4" onClose={() => onOpenChange(false)}>
                     <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 items-start sm:items-center w-full">
