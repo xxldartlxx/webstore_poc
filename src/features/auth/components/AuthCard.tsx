@@ -33,7 +33,7 @@ export function AuthCard({ title, subtitle, children, footer, variant = "login" 
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="w-full max-w-md p-8 rounded-2xl bg-secondary backdrop-blur-xl border border-border shadow-2xl"
+                className="w-full max-w-md p-8 rounded-2xl glass-card shiny-border glow-medium"
             >
                 <div className="text-center mb-8">
                     <h2 className="text-3xl font-bold text-foreground mb-2">{title}</h2>
