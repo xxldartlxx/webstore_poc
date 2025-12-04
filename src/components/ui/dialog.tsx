@@ -7,9 +7,10 @@ interface DialogProps {
     open: boolean;
     onOpenChange: (open: boolean) => void;
     children: React.ReactNode;
+    variant?: "default" | "sheet";
 }
 
-export function Dialog({ open, onOpenChange, children }: DialogProps) {
+export function Dialog({ open, onOpenChange, children, variant = "default" }: DialogProps) {
     React.useEffect(() => {
         const handleEscape = (e: KeyboardEvent) => {
             if (e.key === "Escape") {
@@ -28,6 +29,8 @@ export function Dialog({ open, onOpenChange, children }: DialogProps) {
         };
     }, [open, onOpenChange]);
 
+    const isSheet = variant === "sheet";
+
     return (
         <AnimatePresence>
             {open && (
@@ -41,14 +44,17 @@ export function Dialog({ open, onOpenChange, children }: DialogProps) {
                         className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm"
                     />
                     {/* Dialog Content */}
-                    <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+                    <div className={cn("fixed inset-0 z-50 flex p-4", isSheet ? "items-end justify-center" : "items-center justify-center")}>
                         <motion.div
-                            initial={{ opacity: 0, scale: 0.95, y: 20 }}
-                            animate={{ opacity: 1, scale: 1, y: 0 }}
-                            exit={{ opacity: 0, scale: 0.95, y: 20 }}
+                            initial={isSheet ? { opacity: 0, y: 40 } : { opacity: 0, scale: 0.95, y: 20 }}
+                            animate={isSheet ? { opacity: 1, y: 0 } : { opacity: 1, scale: 1, y: 0 }}
+                            exit={isSheet ? { opacity: 0, y: 40 } : { opacity: 0, scale: 0.95, y: 20 }}
                             transition={{ type: "spring", duration: 0.5 }}
                             onClick={(e) => e.stopPropagation()}
-                            className="relative w-full max-w-2xl max-h-[90vh] overflow-auto bg-background rounded-lg shadow-lg border"
+                            className={cn(
+                                "relative w-full max-w-2xl max-h-[90vh] overflow-auto bg-background rounded-lg shadow-lg border",
+                                isSheet && "max-w-lg max-h-[75vh] rounded-t-2xl rounded-b-none"
+                            )}
                         >
                             {children}
                         </motion.div>
