@@ -40,7 +40,7 @@ export function HeroSection({ onPrimaryClick, onSecondaryClick, actions }: HeroS
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-                className="flex flex-col sm:flex-row gap-4 w-full justify-center"
+                className="hero-cta-glass inline-flex flex-col sm:flex-row gap-4 w-full max-w-xl justify-center"
             >
                 <Button
                     size="lg"
@@ -53,7 +53,7 @@ export function HeroSection({ onPrimaryClick, onSecondaryClick, actions }: HeroS
                 <Button
                     variant="outline"
                     size="lg"
-                    className="text-lg h-14 px-8 rounded-full bg-white/5 border-white/10 hover:bg-white/10 hover:border-white/20 backdrop-blur-sm transition-all duration-300"
+                    className="text-lg h-14 px-8 rounded-full bg-white/10 border-white/20 hover:bg-white/20 hover:border-white/40 backdrop-blur-sm transition-all duration-300"
                     onClick={onSecondaryClick}
                 >
                     Find Professionals
