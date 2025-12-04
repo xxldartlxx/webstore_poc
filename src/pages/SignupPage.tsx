@@ -43,11 +43,11 @@ const SignupPage = () => {
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="w-full max-w-md p-8 rounded-2xl bg-white/10 backdrop-blur-xl border border-white/20 shadow-2xl"
+                className="w-full max-w-md p-8 rounded-2xl bg-secondary backdrop-blur-xl border border-border shadow-2xl"
             >
                 <div className="text-center mb-8">
-                    <h2 className="text-3xl font-bold text-white mb-2">Create Account</h2>
-                    <p className="text-white/60">Join our community of professionals</p>
+                    <h2 className="text-3xl font-bold text-foreground mb-2">Create Account</h2>
+                    <p className="text-muted-foreground">Join our community of professionals</p>
                 </div>
 
                 {error && (
@@ -58,14 +58,14 @@ const SignupPage = () => {
 
                 <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="space-y-2">
-                        <label className="text-sm font-medium text-white/80 ml-1">Full Name</label>
+                        <label className="text-sm font-medium text-foreground/80 ml-1">Full Name</label>
                         <div className="relative">
-                            <User className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-white/40" />
+                            <User className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
                             <input
                                 type="text"
                                 value={name}
                                 onChange={(e) => setName(e.target.value)}
-                                className="w-full bg-white/5 border border-white/10 rounded-xl py-3 pl-12 pr-4 text-white placeholder:text-white/20 focus:outline-none focus:border-white/30 focus:bg-white/10 transition-all"
+                                className="w-full bg-secondary/50 border border-border rounded-xl py-3 pl-12 pr-4 text-foreground placeholder:text-muted-foreground/40 focus:outline-none focus:border-primary/30 focus:bg-secondary transition-all"
                                 placeholder="John Doe"
                                 required
                             />
@@ -73,14 +73,14 @@ const SignupPage = () => {
                     </div>
 
                     <div className="space-y-2">
-                        <label className="text-sm font-medium text-white/80 ml-1">Email Address</label>
+                        <label className="text-sm font-medium text-foreground/80 ml-1">Email Address</label>
                         <div className="relative">
-                            <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-white/40" />
+                            <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
                             <input
                                 type="email"
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
-                                className="w-full bg-white/5 border border-white/10 rounded-xl py-3 pl-12 pr-4 text-white placeholder:text-white/20 focus:outline-none focus:border-white/30 focus:bg-white/10 transition-all"
+                                className="w-full bg-secondary/50 border border-border rounded-xl py-3 pl-12 pr-4 text-foreground placeholder:text-muted-foreground/40 focus:outline-none focus:border-primary/30 focus:bg-secondary transition-all"
                                 placeholder="name@example.com"
                                 required
                             />
@@ -88,14 +88,14 @@ const SignupPage = () => {
                     </div>
 
                     <div className="space-y-2">
-                        <label className="text-sm font-medium text-white/80 ml-1">Password</label>
+                        <label className="text-sm font-medium text-foreground/80 ml-1">Password</label>
                         <div className="relative">
-                            <Lock className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-white/40" />
+                            <Lock className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
                             <input
                                 type="password"
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
-                                className="w-full bg-white/5 border border-white/10 rounded-xl py-3 pl-12 pr-4 text-white placeholder:text-white/20 focus:outline-none focus:border-white/30 focus:bg-white/10 transition-all"
+                                className="w-full bg-secondary/50 border border-border rounded-xl py-3 pl-12 pr-4 text-foreground placeholder:text-muted-foreground/40 focus:outline-none focus:border-primary/30 focus:bg-secondary transition-all"
                                 placeholder="••••••••"
                                 required
                             />
@@ -103,8 +103,8 @@ const SignupPage = () => {
                     </div>
 
                     <div className="flex items-center space-x-2 text-sm">
-                        <input type="checkbox" className="w-4 h-4 rounded border-white/20 bg-white/5 checked:bg-purple-500 transition-colors" required />
-                        <span className="text-white/60">I agree to the <a href="#" className="text-purple-400 hover:text-purple-300">Terms of Service</a> and <a href="#" className="text-purple-400 hover:text-purple-300">Privacy Policy</a></span>
+                        <input type="checkbox" className="w-4 h-4 rounded border-border bg-secondary/50 checked:bg-purple-500 transition-colors" required />
+                        <span className="text-muted-foreground">I agree to the <a href="#" className="text-purple-400 hover:text-purple-300">Terms of Service</a> and <a href="#" className="text-purple-400 hover:text-purple-300">Privacy Policy</a></span>
                     </div>
 
                     <button
@@ -126,17 +126,17 @@ const SignupPage = () => {
                 <div className="mt-8">
                     <div className="relative">
                         <div className="absolute inset-0 flex items-center">
-                            <div className="w-full border-t border-white/10"></div>
+                            <div className="w-full border-t border-border"></div>
                         </div>
                         <div className="relative flex justify-center text-sm">
-                            <span className="px-4 bg-transparent text-white/40 bg-[#0f172a]">Or continue with</span>
+                            <span className="px-4 bg-transparent text-muted-foreground bg-background">Or continue with</span>
                         </div>
                     </div>
 
                     <button
                         onClick={handleGoogleLogin}
                         disabled={isLoading}
-                        className="mt-6 w-full bg-white/5 hover:bg-white/10 border border-white/10 text-white font-medium py-3.5 rounded-xl transition-all flex items-center justify-center space-x-3 group"
+                        className="mt-6 w-full bg-secondary/50 hover:bg-secondary border border-border text-foreground font-medium py-3.5 rounded-xl transition-all flex items-center justify-center space-x-3 group"
                     >
                         <svg className="w-5 h-5 group-hover:scale-110 transition-transform" viewBox="0 0 24 24">
                             <path
@@ -161,7 +161,7 @@ const SignupPage = () => {
                 </div>
 
                 <div className="mt-8 text-center">
-                    <p className="text-white/60">
+                    <p className="text-muted-foreground">
                         Already have an account?{' '}
                         <Link to="/login" className="text-purple-400 hover:text-purple-300 font-medium hover:underline transition-all">
                             Sign in
