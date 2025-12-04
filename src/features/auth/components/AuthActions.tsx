@@ -11,7 +11,7 @@ export function PrimaryButton({ loading, className, children, ...props }: Primar
         <button
             className={cn(
                 "w-full material-button raised tactile focus-glow",
-                "text-white font-semibold py-3.5 px-5 rounded-full transition-all transform hover:scale-[1.02] active:scale-[0.98]",
+                "text-white font-semibold py-3.5 px-5 rounded-md transition-all transform hover:scale-[1.02] active:scale-[0.98]",
                 "flex items-center justify-center space-x-2 disabled:opacity-70 disabled:cursor-not-allowed",
                 className
             )}
@@ -33,7 +33,7 @@ export function SecondaryButton({ icon, children, className, loading, ...props }
         <button
             className={cn(
                 "w-full chip-glass text-foreground font-medium py-3.5 px-5",
-                "rounded-full transition-all flex items-center justify-center space-x-3 group disabled:opacity-70 disabled:cursor-not-allowed",
+                "rounded-md transition-all flex items-center justify-center space-x-3 group disabled:opacity-70 disabled:cursor-not-allowed",
                 className
             )}
             disabled={loading || props.disabled}

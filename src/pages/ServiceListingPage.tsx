@@ -66,7 +66,7 @@ export function ServiceListingPage() {
                     />
                 }
             >
-                <div className="mb-4 flex items-center justify-between gap-3 lg:hidden">
+                <div className="mb-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between lg:hidden">
                     <div className="flex-1">
                         <p className="text-sm font-semibold text-foreground">
                             {filteredProviders.length} professionals
@@ -75,8 +75,8 @@ export function ServiceListingPage() {
                             Showing results for {selectedCategory}
                         </p>
                     </div>
-                    <div className="flex items-center gap-2">
-                        <select className="bg-card border border-border rounded-full text-xs py-2 px-3 focus:ring-2 focus:ring-primary/20 outline-none cursor-pointer hover:border-primary/50 transition-colors font-medium">
+                    <div className="flex w-full sm:w-auto items-center gap-2 flex-wrap sm:flex-nowrap">
+                        <select className="flex-1 sm:flex-none bg-card border border-border rounded-full text-xs py-2 px-3 focus:ring-2 focus:ring-primary/20 outline-none cursor-pointer hover:border-primary/50 transition-colors font-medium">
                             <option>Best Match</option>
                             <option>Top Rated</option>
                             <option>Price: Low to High</option>
@@ -86,13 +86,13 @@ export function ServiceListingPage() {
                         <Button
                             variant="outline"
                             size="sm"
-                            className="rounded-full px-3 py-2 flex items-center gap-2"
+                            className="flex-shrink-0 rounded-full px-3 py-2 flex items-center gap-2"
                             onClick={() => setIsFilterDialogOpen(true)}
                         >
                             <SlidersHorizontal className="h-4 w-4" />
                             <span className="text-xs font-medium">Filters</span>
                             {appliedFiltersCount > 0 && (
-                                <span className="rounded-full bg-primary/10 px-2 py-0.5 text-[10px] text-primary">
+                                <span className="hidden sm:inline-flex rounded-full bg-primary/10 px-2 py-0.5 text-[10px] text-primary">
                                     {appliedFiltersCount} applied
                                 </span>
                             )}

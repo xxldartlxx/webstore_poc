@@ -148,7 +148,7 @@ export function Navbar({ onOpenAIChat }: NavbarProps) {
                                         initial={{ opacity: 0, y: 10, scale: 0.95 }}
                                         animate={{ opacity: 1, y: 0, scale: 1 }}
                                         exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                                        className="absolute right-0 top-full mt-3 w-64 glass-card rounded-2xl p-2 z-50 origin-top-right"
+                                        className="absolute right-0 top-full mt-3 w-64 max-w-[calc(100vw-1.5rem)] glass-card rounded-2xl p-2 z-50 origin-top-right"
                                     >
                                         <div className="px-4 py-3">
                                             <p className="text-sm font-semibold text-foreground">{user.name}</p>

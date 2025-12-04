@@ -44,7 +44,7 @@ export function HeroSection({ onPrimaryClick, onSecondaryClick, actions }: HeroS
             >
                 <Button
                     size="lg"
-                    className="text-lg h-14 px-8 rounded-full shadow-lg shadow-primary/25 hover:shadow-primary/40 hover:scale-105 transition-all duration-300"
+                    className="text-lg h-14 px-8 shadow-lg shadow-primary/25 hover:shadow-primary/40 hover:scale-105 transition-all duration-300"
                     onClick={onPrimaryClick}
                 >
                     Start Your Journey
@@ -53,7 +53,7 @@ export function HeroSection({ onPrimaryClick, onSecondaryClick, actions }: HeroS
                 <Button
                     variant="outline"
                     size="lg"
-                    className="text-lg h-14 px-8 rounded-full bg-white/10 border-white/20 hover:bg-white/20 hover:border-white/40 backdrop-blur-sm transition-all duration-300"
+                    className="text-lg h-14 px-8 bg-white/10 border-white/20 hover:bg-white/20 hover:border-white/40 backdrop-blur-sm transition-all duration-300"
                     onClick={onSecondaryClick}
                 >
                     Find Professionals
