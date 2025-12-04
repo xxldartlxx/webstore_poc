@@ -125,7 +125,7 @@ export function AIChatWindow({ isOpen, onClose }: AIChatWindowProps) {
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: 20, scale: 0.95 }}
                     transition={{ duration: 0.2 }}
-                    className="fixed bottom-4 right-4 z-50 w-[90vw] md:w-[400px] h-[600px] max-h-[80vh] flex flex-col panel-glass rounded-2xl overflow-hidden"
+                    className="fixed bottom-4 md:bottom-10 lg:bottom-12 right-4 z-50 w-[90vw] md:w-[400px] h-[600px] max-h-[80vh] flex flex-col panel-glass rounded-2xl overflow-hidden"
                 >
                     {/* Header */}
                     <div className="flex items-center justify-between p-4 border-b border-border bg-gradient-to-r from-primary/10 to-purple-500/10">
