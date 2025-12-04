@@ -196,14 +196,14 @@ export function Navbar({ onOpenAIChat }: NavbarProps) {
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: 'auto' }}
                         exit={{ opacity: 0, height: 0 }}
-                        className="md:hidden glass-effect border-b border-white/5 overflow-hidden"
+                        className="md:hidden bg-background/95 backdrop-blur-xl border-b border-border/60 shadow-lg overflow-hidden"
                     >
-                        <div className="container py-6 flex flex-col gap-4">
+                        <div className="container py-6 flex flex-col gap-4 text-foreground">
                             {navLinks.map((link) => (
                                 <Link
                                     key={link.path}
                                     to={link.path}
-                                    className="text-base font-medium p-2 hover:bg-white/5 rounded-lg transition-colors"
+                                    className="text-base font-medium p-2 rounded-lg transition-colors text-foreground hover:bg-primary/5"
                                     onClick={() => setIsMenuOpen(false)}
                                 >
                                     {link.name}
