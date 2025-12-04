@@ -77,9 +77,9 @@ export function ProfileModal({ provider, open, onOpenChange }: ProfileModalProps
     };
 
     return (
-        <Dialog open={open} onOpenChange={onOpenChange}>
-            <DialogContent className="p-0 max-w-3xl">
-                <DialogHeader className="p-6 pb-0" onClose={() => onOpenChange(false)}>
+        <Dialog open={open} onOpenChange={onOpenChange} variant="sheet">
+            <DialogContent className="p-0 w-full sm:max-w-3xl flex flex-col">
+                <DialogHeader className="px-4 pt-4 pb-2 sm:p-6 sm:pb-0" onClose={() => onOpenChange(false)}>
                     <div className="flex flex-col sm:flex-row gap-4 items-start">
                         <div className="relative">
                             <img
@@ -114,7 +114,7 @@ export function ProfileModal({ provider, open, onOpenChange }: ProfileModalProps
                     </div>
                 </DialogHeader>
 
-                <div className="p-6 space-y-6 max-h-[60vh] overflow-y-auto">
+                <div className="px-4 pb-4 pt-2 sm:p-6 space-y-6 max-h-[50vh] sm:max-h-[60vh] overflow-y-auto">
                     {/* Stats Grid */}
                     <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
                         <motion.div
@@ -240,7 +240,7 @@ export function ProfileModal({ provider, open, onOpenChange }: ProfileModalProps
                 </div>
 
                 {/* Footer Actions */}
-                <div className="p-6 pt-0 flex gap-3">
+                <div className="px-4 pb-4 pt-2 sm:p-6 sm:pt-0 flex flex-col sm:flex-row gap-3 border-t border-border/40 bg-background/80 backdrop-blur-md">
                     <Button className="flex-1 raised tactile" size="lg">
                         Book Now
                     </Button>

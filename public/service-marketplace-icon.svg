@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">Service Marketplace Icon</title>
+  <desc id="desc">Abstract badge with spark and checkmark representing trusted services</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#4f46e5" />
+      <stop offset="50%" stop-color="#7c3aed" />
+      <stop offset="100%" stop-color="#ec4899" />
+    </linearGradient>
+  </defs>
+  <rect x="4" y="4" width="56" height="56" rx="18" fill="url(#bg)" />
+  <circle cx="22" cy="24" r="8" fill="rgba(15,23,42,0.96)" />
+  <path d="M18 24.5l3 3.2 6-7" fill="none" stroke="#a5b4fc" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M34 18h10a6 6 0 0 1 6 6v8.5c0 8.3-6.2 15-14.5 15H30" fill="none" stroke="#e0f2fe" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M18 42h14" stroke="#e5e7eb" stroke-width="2.5" stroke-linecap="round" />
+  <circle cx="46" cy="18" r="4" fill="#f9fafb" />
+</svg>
