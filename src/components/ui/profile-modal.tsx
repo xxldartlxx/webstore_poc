@@ -79,8 +79,8 @@ export function ProfileModal({ provider, open, onOpenChange }: ProfileModalProps
     return (
         <Dialog open={open} onOpenChange={onOpenChange} variant="sheet">
             <DialogContent className="p-0 w-full sm:max-w-3xl flex flex-col">
-                <DialogHeader className="px-4 pt-4 pb-2 sm:p-6 sm:pb-0" onClose={() => onOpenChange(false)}>
-                    <div className="flex flex-col sm:flex-row gap-4 items-start">
+                <DialogHeader className="px-4 pt-4 pb-3 sm:px-6 sm:pt-6 sm:pb-4" onClose={() => onOpenChange(false)}>
+                    <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 items-start sm:items-center w-full">
                         <div className="relative">
                             <img
                                 src={provider.image}
@@ -93,8 +93,8 @@ export function ProfileModal({ provider, open, onOpenChange }: ProfileModalProps
                                 </div>
                             )}
                         </div>
-                        <div className="flex-1">
-                            <DialogTitle>{provider.name}</DialogTitle>
+                        <div className="flex-1 min-w-0">
+                            <DialogTitle className="truncate">{provider.name}</DialogTitle>
                             <p className="text-lg text-muted-foreground font-medium">{provider.role}</p>
                             <div className="flex items-center gap-2 mt-2">
                                 <Badge variant="secondary" className="gap-1">
@@ -107,8 +107,8 @@ export function ProfileModal({ provider, open, onOpenChange }: ProfileModalProps
                                 </Badge>
                             </div>
                         </div>
-                        <div className="text-right">
-                            <div className="text-3xl font-bold text-primary">{provider.price}</div>
+                        <div className="text-right shrink-0 space-y-1 sm:pl-4">
+                            <div className="text-3xl font-bold text-primary leading-none">{provider.price}</div>
                             <div className="text-sm text-muted-foreground">Starting rate</div>
                         </div>
                     </div>
@@ -241,10 +241,14 @@ export function ProfileModal({ provider, open, onOpenChange }: ProfileModalProps
 
                 {/* Footer Actions */}
                 <div className="px-4 pb-4 pt-2 sm:p-6 sm:pt-0 flex flex-col sm:flex-row gap-3 border-t border-border/40 bg-background/80 backdrop-blur-md">
-                    <Button className="flex-1 raised tactile" size="lg">
+                    <Button className="flex-1 h-12 text-base font-semibold tracking-tight" size="lg">
                         Book Now
                     </Button>
-                    <Button variant="outline" className="flex-1 tactile" size="lg">
+                    <Button
+                        variant="outline"
+                        className="flex-1 h-12 text-base font-semibold tracking-tight bg-background/40 border-primary/30 text-primary hover:bg-primary/15"
+                        size="lg"
+                    >
                         Send Message
                     </Button>
                 </div>

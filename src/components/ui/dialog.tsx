@@ -52,8 +52,8 @@ export function Dialog({ open, onOpenChange, children, variant = "default" }: Di
                             transition={{ type: "spring", duration: 0.5 }}
                             onClick={(e) => e.stopPropagation()}
                             className={cn(
-                                "relative w-full max-w-2xl max-h-[90vh] overflow-auto panel-glass rounded-2xl",
-                                isSheet && "max-w-lg max-h-[75vh] rounded-t-2xl rounded-b-none"
+                                "relative w-full max-w-2xl max-h-[90vh] overflow-auto rounded-2xl panel-glass",
+                                isSheet && "max-w-3xl max-h-[80vh] rounded-t-3xl rounded-b-none sheet-glass"
                             )}
                         >
                             {children}
