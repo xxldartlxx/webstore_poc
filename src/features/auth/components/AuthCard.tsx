@@ -24,7 +24,7 @@ export function AuthCard({ title, subtitle, children, footer, variant = "login" 
     const { primary, secondary } = backgroundConfig[variant];
 
     return (
-        <div className="min-h-screen pt-20 pb-12 flex flex-col items-center justify-center relative overflow-hidden">
+        <div className="min-h-screen pt-24 pb-16 px-4 flex flex-col items-center justify-center relative overflow-hidden z-20">
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
                 <div className={`absolute ${primary} w-[40%] h-[40%] rounded-full bg-purple-500/20 blur-[100px]`} />
                 <div className={`absolute ${secondary} w-[40%] h-[40%] rounded-full bg-blue-500/20 blur-[100px]`} />
@@ -33,7 +33,7 @@ export function AuthCard({ title, subtitle, children, footer, variant = "login" 
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="w-full max-w-md p-8 rounded-2xl glass-card shiny-border glow-medium"
+                className="w-full max-w-md md:max-w-lg p-8 md:p-10 rounded-3xl glass-card shiny-border glow-high"
             >
                 <div className="text-center mb-8">
                     <h2 className="text-3xl font-bold text-foreground mb-2">{title}</h2>

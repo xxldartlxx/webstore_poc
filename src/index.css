@@ -78,27 +78,27 @@
 @layer utilities {
     /* Glass Effect */
     .glass-effect {
-        @apply bg-background/70 backdrop-blur-xl border-b border-white/5;
+        @apply bg-background/40 backdrop-blur-2xl border-b border-white/10 shadow-lg shadow-primary/10;
     }
 
     .light-theme .glass-effect {
-        @apply bg-white/70 border-black/5;
+        @apply bg-white/80 border-black/5 shadow-md;
     }
 
     .glass-card {
-        @apply relative bg-white/5 backdrop-blur-2xl border border-white/10 shadow-xl transition-all duration-300;
+        @apply relative bg-gradient-to-br from-white/20 via-white/10 to-white/5 bg-white/10 backdrop-blur-3xl border border-white/20 shadow-2xl shadow-primary/30 transition-all duration-500;
     }
 
     .glass-card:hover {
-        @apply bg-white/10 border-white/20 -translate-y-1 shadow-2xl;
+        @apply bg-gradient-to-br from-white/30 via-white/20 to-white/10 bg-white/15 border-white/40 -translate-y-1 shadow-2xl shadow-primary/40;
     }
 
     .light-theme .glass-card {
-        @apply bg-white/60 border-black/5 shadow-lg;
+        @apply bg-white/80 border-black/5 shadow-xl;
     }
 
     .light-theme .glass-card:hover {
-        @apply bg-white/80 border-primary/20 shadow-xl;
+        @apply bg-white/90 border-primary/20 shadow-2xl;
     }
 
     /* Text Gradients */
