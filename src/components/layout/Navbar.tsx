@@ -179,12 +179,15 @@ export function Navbar({ onOpenAIChat }: NavbarProps) {
                     )}
                 </div>
 
-                <button
-                    className="md:hidden p-2 rounded-xl hover:bg-secondary/50 transition-colors"
-                    onClick={() => setIsMenuOpen(!isMenuOpen)}
-                >
-                    {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-                </button>
+                <div className="flex items-center gap-2 md:hidden">
+                    <ThemeToggle />
+                    <button
+                        className="p-2 rounded-xl hover:bg-secondary/50 transition-colors"
+                        onClick={() => setIsMenuOpen(!isMenuOpen)}
+                    >
+                        {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+                    </button>
+                </div>
             </div>
 
             <AnimatePresence>
