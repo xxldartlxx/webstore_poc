@@ -251,7 +251,7 @@
         border-color: rgba(148, 163, 184, 0.5);
         box-shadow: 0 14px 36px rgba(148, 163, 184, 0.5);
         /* Ensure readable text on light chips */
-        color: hsl(var(--foreground));
+        color: hsl(var(--foreground)) !important;
     }
 
     .material-button {
@@ -299,7 +299,7 @@
             linear-gradient(to bottom right, rgba(255, 255, 255, 0.92), rgba(226, 232, 240, 0.9));
         background-color: rgba(255, 255, 255, 0.9);
         /* Dark foreground for readability on bright glass buttons */
-        color: hsl(var(--foreground));
+        color: hsl(var(--foreground)) !important;
         box-shadow:
             0 0 0 1px rgba(148, 163, 184, 0.55),
             0 20px 55px rgba(148, 163, 184, 0.85);
