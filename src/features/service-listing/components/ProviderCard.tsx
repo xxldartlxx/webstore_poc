@@ -16,7 +16,7 @@ interface ProviderCardProps {
 export function ProviderCard({ provider, isFavorite, onToggleFavorite, onViewProfile, variants }: ProviderCardProps) {
     return (
         <motion.div variants={variants}>
-            <div className="group relative glass-card shiny-border proximity-glow glow-medium overflow-hidden h-full flex flex-col">
+            <div className="group relative bg-card rounded-2xl border border-border/50 overflow-hidden hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500 hover:-translate-y-1 h-full flex flex-col">
                 <div className="relative aspect-[4/3] overflow-hidden bg-secondary/20">
                     <img
                         src={provider.image}

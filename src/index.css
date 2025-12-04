@@ -78,45 +78,27 @@
 @layer utilities {
     /* Glass Effect */
     .glass-effect {
-        @apply backdrop-blur-2xl border-b;
-        background-color: hsl(var(--background) / 0.65);
-        background-image:
-            radial-gradient(circle at 0% 0%, rgba(255, 255, 255, 0.14), transparent 55%),
-            radial-gradient(circle at 100% 0%, rgba(129, 140, 248, 0.25), transparent 60%);
-        box-shadow: 0 18px 45px rgba(15, 23, 42, 0.85);
+        @apply bg-background/70 backdrop-blur-xl border-b border-white/5;
     }
 
     .light-theme .glass-effect {
-        background-color: hsla(0, 0%, 100%, 0.88);
-        background-image:
-            radial-gradient(circle at 0% 0%, rgba(255, 255, 255, 0.92), transparent 60%),
-            radial-gradient(circle at 100% 0%, rgba(129, 140, 248, 0.22), transparent 60%);
-        box-shadow: 0 18px 45px rgba(148, 163, 184, 0.7);
-        border-color: rgba(0, 0, 0, 0.05);
+        @apply bg-white/70 border-black/5;
     }
 
     .glass-card {
         @apply relative bg-white/5 backdrop-blur-2xl border border-white/10 shadow-xl transition-all duration-300;
-        background-image:
-            radial-gradient(circle at 0% 0%, rgba(255, 255, 255, 0.14), transparent 55%),
-            radial-gradient(circle at 100% 0%, rgba(129, 140, 248, 0.24), transparent 60%);
     }
 
     .glass-card:hover {
-        @apply bg-white/10 border-white/20 shadow-2xl;
-        transform: translateY(-4px);
+        @apply bg-white/10 border-white/20 -translate-y-1 shadow-2xl;
     }
 
     .light-theme .glass-card {
-        @apply bg-white/70 border-black/5 shadow-lg;
-        background-image:
-            radial-gradient(circle at 0% 0%, rgba(255, 255, 255, 0.95), transparent 60%),
-            radial-gradient(circle at 100% 0%, rgba(129, 140, 248, 0.14), transparent 55%);
+        @apply bg-white/60 border-black/5 shadow-lg;
     }
 
     .light-theme .glass-card:hover {
-        @apply bg-white/90 border-primary/20 shadow-xl;
-        transform: translateY(-4px);
+        @apply bg-white/80 border-primary/20 shadow-xl;
     }
 
     /* Text Gradients */
