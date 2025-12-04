@@ -94,6 +94,19 @@
         @apply bg-gradient-to-br from-white/30 via-white/20 to-white/10 bg-white/15 border-white/40 -translate-y-1 shadow-2xl shadow-primary/40;
     }
 
+    .glass-card::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        background:
+            radial-gradient(circle at 0% 0%, rgba(255, 255, 255, 0.75), transparent 55%),
+            radial-gradient(circle at 80% 0%, rgba(129, 140, 248, 0.35), transparent 60%);
+        opacity: 0.7;
+        mix-blend-mode: screen;
+        pointer-events: none;
+    }
+
     .light-theme .glass-card {
         @apply bg-gradient-to-br from-sky-100/70 via-white/80 to-indigo-100/60 backdrop-blur-3xl border border-slate-200/70 shadow-xl shadow-primary/20;
     }
