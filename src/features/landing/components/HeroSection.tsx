@@ -40,7 +40,7 @@ export function HeroSection({ onPrimaryClick, onSecondaryClick, actions }: HeroS
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-                className="hero-cta-glass inline-flex flex-col sm:flex-row gap-4 w-full max-w-xl justify-center"
+                className="inline-flex flex-col sm:flex-row gap-4 w-full max-w-xl justify-center"
             >
                 <Button
                     size="lg"
