@@ -8,8 +8,8 @@ interface ServiceFiltersSidebarProps extends ServiceFiltersFormProps {
 
 export function ServiceFiltersSidebar({ onClearFilters, ...formProps }: ServiceFiltersSidebarProps) {
     return (
-        <aside className="hidden lg:block lg:w-72 xl:w-80 flex-shrink-0">
-            <div className="sticky top-24 glass-card shiny-border glow-medium rounded-3xl p-5 space-y-5">
+        <aside className="hidden lg:block lg:w-80 flex-shrink-0">
+            <div className="sticky top-24 glass-card shiny-border glow-medium rounded-3xl p-6 space-y-5">
                 <div className="flex items-center justify-between pb-4 border-b border-border/50">
                     <div className="flex items-center gap-2">
                         <SlidersHorizontal className="h-5 w-5 text-primary" />

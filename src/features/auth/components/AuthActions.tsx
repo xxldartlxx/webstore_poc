@@ -10,9 +10,9 @@ export function PrimaryButton({ loading, className, children, ...props }: Primar
     return (
         <button
             className={cn(
-                "w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500",
-                "text-white font-semibold py-3.5 rounded-xl transition-all transform hover:scale-[1.02] active:scale-[0.98]",
-                "flex items-center justify-center space-x-2 shadow-lg shadow-purple-500/20 disabled:opacity-70 disabled:cursor-not-allowed",
+                "w-full material-button raised tactile focus-glow",
+                "text-white font-semibold py-3.5 px-5 rounded-full transition-all transform hover:scale-[1.02] active:scale-[0.98]",
+                "flex items-center justify-center space-x-2 disabled:opacity-70 disabled:cursor-not-allowed",
                 className
             )}
             disabled={loading || props.disabled}
@@ -32,8 +32,8 @@ export function SecondaryButton({ icon, children, className, loading, ...props }
     return (
         <button
             className={cn(
-                "w-full bg-secondary/50 hover:bg-secondary border border-border text-foreground font-medium py-3.5",
-                "rounded-xl transition-all flex items-center justify-center space-x-3 group disabled:opacity-70 disabled:cursor-not-allowed",
+                "w-full chip-glass text-foreground font-medium py-3.5 px-5",
+                "rounded-full transition-all flex items-center justify-center space-x-3 group disabled:opacity-70 disabled:cursor-not-allowed",
                 className
             )}
             disabled={loading || props.disabled}
