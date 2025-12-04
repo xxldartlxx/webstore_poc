@@ -34,9 +34,8 @@ export function PopularCategoriesSection({ categories, onCategorySelect }: Popul
                             whileTap={{ scale: 0.95 }}
                             onClick={() => onCategorySelect(category.name)}
                             className={`
-                                group flex items-center gap-3 px-5 py-3 rounded-2xl
-                                bg-card/50 backdrop-blur-md border border-border/50
-                                hover:bg-card hover:border-primary/20 hover:shadow-lg hover:shadow-primary/5
+                                group flex items-center gap-3 px-5 py-3 rounded-2xl chip-glass
+                                hover:border-primary/30 hover:shadow-lg hover:shadow-primary/10
                                 transition-all duration-300
                             `}
                         >

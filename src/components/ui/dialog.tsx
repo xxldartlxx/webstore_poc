@@ -52,7 +52,7 @@ export function Dialog({ open, onOpenChange, children, variant = "default" }: Di
                             transition={{ type: "spring", duration: 0.5 }}
                             onClick={(e) => e.stopPropagation()}
                             className={cn(
-                                "relative w-full max-w-2xl max-h-[90vh] overflow-auto bg-background rounded-lg shadow-lg border",
+                                "relative w-full max-w-2xl max-h-[90vh] overflow-auto panel-glass rounded-2xl",
                                 isSheet && "max-w-lg max-h-[75vh] rounded-t-2xl rounded-b-none"
                             )}
                         >

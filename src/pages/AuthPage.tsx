@@ -2,13 +2,10 @@ import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
-import { Briefcase, User } from "lucide-react";
 
 export function AuthPage() {
     const [isLogin, setIsLogin] = useState(true);
-    const [userType, setUserType] = useState<'client' | 'provider'>('client');
 
     return (
         <div className="container flex items-center justify-center min-h-[calc(100vh-4rem)] py-10">
@@ -22,34 +19,6 @@ export function AuthPage() {
                     </CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-4">
-                    {/* User Type Toggle */}
-                    <div className="grid grid-cols-2 gap-2 p-1 bg-secondary rounded-lg">
-                        <button
-                            onClick={() => setUserType('client')}
-                            className={cn(
-                                "flex items-center justify-center gap-2 py-2 text-sm font-medium rounded-md transition-all duration-300 tactile",
-                                userType === 'client'
-                                    ? "bg-background shadow-sm text-foreground elevation-1"
-                                    : "text-muted-foreground hover:text-foreground hover:bg-background/50"
-                            )}
-                        >
-                            <User className="h-4 w-4" />
-                            Client
-                        </button>
-                        <button
-                            onClick={() => setUserType('provider')}
-                            className={cn(
-                                "flex items-center justify-center gap-2 py-2 text-sm font-medium rounded-md transition-all duration-300 tactile",
-                                userType === 'provider'
-                                    ? "bg-background shadow-sm text-foreground elevation-1"
-                                    : "text-muted-foreground hover:text-foreground hover:bg-background/50"
-                            )}
-                        >
-                            <Briefcase className="h-4 w-4" />
-                            Provider
-                        </button>
-                    </div>
-
                     <AnimatePresence mode="wait">
                         <motion.form
                             key={isLogin ? "login" : "register"}

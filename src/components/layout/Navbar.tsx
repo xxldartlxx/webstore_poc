@@ -13,7 +13,6 @@ interface NavbarProps {
 
 export function Navbar({ onOpenAIChat }: NavbarProps) {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const [userType, setUserType] = useState<'client' | 'provider'>('client');
     const [isProfileOpen, setIsProfileOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
     const profileMenuRef = useRef<HTMLDivElement | null>(null);
@@ -70,7 +69,7 @@ export function Navbar({ onOpenAIChat }: NavbarProps) {
         <nav
             className={cn(
                 "sticky top-0 z-50 w-full transition-all duration-300 border-b border-transparent",
-                scrolled || isMenuOpen ? "glass-effect h-20" : "bg-transparent h-24 border-transparent"
+                scrolled || isMenuOpen ? "nav-glass h-20" : "bg-transparent h-24 border-transparent"
             )}
         >
             <div className="container h-full flex items-center justify-between">
@@ -129,32 +128,6 @@ export function Navbar({ onOpenAIChat }: NavbarProps) {
                             <span className="inline lg:hidden font-medium">Post</span>
                         </Button>
                     )}
-
-                    <div className="flex items-center bg-secondary/50 backdrop-blur-sm border border-white/5 rounded-full p-1.5">
-                        <button
-                            onClick={() => setUserType('client')}
-                            className={cn(
-                                "px-4 py-1.5 rounded-full text-xs font-semibold transition-all duration-300",
-                                userType === 'client'
-                                    ? "bg-background shadow-sm text-foreground"
-                                    : "text-muted-foreground hover:text-foreground"
-                            )}
-                        >
-                            Client
-                        </button>
-                        <button
-                            onClick={() => setUserType('provider')}
-                            className={cn(
-                                "px-4 py-1.5 rounded-full text-xs font-semibold transition-all duration-300",
-                                userType === 'provider'
-                                    ? "bg-background shadow-sm text-foreground"
-                                    : "text-muted-foreground hover:text-foreground"
-                            )}
-                        >
-                            Pro
-                        </button>
-                    </div>
-
                     {isAuthenticated && user ? (
                         <div className="relative" ref={profileMenuRef}>
                             <button
@@ -233,7 +206,7 @@ export function Navbar({ onOpenAIChat }: NavbarProps) {
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: 'auto' }}
                         exit={{ opacity: 0, height: 0 }}
-                        className="md:hidden bg-background/95 backdrop-blur-xl border-b border-border/60 shadow-lg overflow-hidden"
+                        className="md:hidden panel-glass border-b border-border/60 overflow-hidden"
                     >
                         <div className="container py-6 flex flex-col gap-4 text-foreground">
                             {navLinks.map((link) => (
