@@ -6,14 +6,28 @@ interface AuthCardProps {
     subtitle: string;
     children: ReactNode;
     footer?: ReactNode;
+    variant?: "login" | "signup";
 }
 
-export function AuthCard({ title, subtitle, children, footer }: AuthCardProps) {
+export function AuthCard({ title, subtitle, children, footer, variant = "login" }: AuthCardProps) {
+    const backgroundConfig = {
+        login: {
+            primary: "top-[-10%] left-[-10%]",
+            secondary: "bottom-[-10%] right-[-10%]",
+        },
+        signup: {
+            primary: "top-[-10%] right-[-10%]",
+            secondary: "bottom-[-10%] left-[-10%]",
+        },
+    } as const;
+
+    const { primary, secondary } = backgroundConfig[variant];
+
     return (
         <div className="min-h-screen pt-20 pb-12 flex flex-col items-center justify-center relative overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
-                <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-purple-500/20 blur-[100px]" />
-                <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] rounded-full bg-blue-500/20 blur-[100px]" />
+                <div className={`absolute ${primary} w-[40%] h-[40%] rounded-full bg-purple-500/20 blur-[100px]`} />
+                <div className={`absolute ${secondary} w-[40%] h-[40%] rounded-full bg-blue-500/20 blur-[100px]`} />
             </div>
 
             <motion.div
