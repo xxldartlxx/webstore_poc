@@ -18,7 +18,7 @@ export function ServiceFiltersSidebar({ onClearFilters, ...formProps }: ServiceF
                     <Button
                         variant="ghost"
                         size="sm"
-                        className="text-sm text-primary hover:text-primary/80 h-auto p-0 font-medium"
+                        className="text-sm text-primary h-auto p-0 font-medium"
                         onClick={onClearFilters}
                     >
                         Clear all
