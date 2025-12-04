@@ -8,7 +8,7 @@ interface ServiceListingShellProps {
 export function ServiceListingShell({ sidebar, children }: ServiceListingShellProps) {
     return (
         <div className="container py-10">
-            <div className="flex flex-col lg:flex-row gap-8">
+            <div className="flex flex-col lg:flex-row gap-8 glass-card shiny-border p-6 lg:p-8">
                 {sidebar}
                 <div className="flex-1">{children}</div>
             </div>

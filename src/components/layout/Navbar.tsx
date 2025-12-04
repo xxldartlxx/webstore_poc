@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { Menu, X, Briefcase, Sparkles, LogOut, User, Settings, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -16,6 +16,7 @@ export function Navbar({ onOpenAIChat }: NavbarProps) {
     const [userType, setUserType] = useState<'client' | 'provider'>('client');
     const [isProfileOpen, setIsProfileOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
+    const profileMenuRef = useRef<HTMLDivElement | null>(null);
     const { user, logout, isAuthenticated } = useAuth();
     const navigate = useNavigate();
     const location = useLocation();
@@ -28,6 +29,30 @@ export function Navbar({ onOpenAIChat }: NavbarProps) {
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
+
+    useEffect(() => {
+        if (!isProfileOpen) return;
+
+        const handleClickOutside = (event: MouseEvent) => {
+            if (profileMenuRef.current && !profileMenuRef.current.contains(event.target as Node)) {
+                setIsProfileOpen(false);
+            }
+        };
+
+        const handleKeyDown = (event: KeyboardEvent) => {
+            if (event.key === 'Escape') {
+                setIsProfileOpen(false);
+            }
+        };
+
+        document.addEventListener('mousedown', handleClickOutside);
+        document.addEventListener('keydown', handleKeyDown);
+
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+            document.removeEventListener('keydown', handleKeyDown);
+        };
+    }, [isProfileOpen]);
 
     const handleLogout = () => {
         logout();
@@ -93,6 +118,18 @@ export function Navbar({ onOpenAIChat }: NavbarProps) {
                         <span className="hidden lg:inline font-medium">AI Assistant</span>
                     </Button>
 
+                    {isAuthenticated && (
+                        <Button
+                            size="sm"
+                            className="gap-2 rounded-full px-4 bg-emerald-500/90 hover:bg-emerald-500 text-white shadow-lg shadow-emerald-500/30"
+                            onClick={() => navigate('/jobs/new')}
+                        >
+                            <Briefcase className="h-4 w-4" />
+                            <span className="hidden lg:inline font-medium">Post a Job</span>
+                            <span className="inline lg:hidden font-medium">Post</span>
+                        </Button>
+                    )}
+
                     <div className="flex items-center bg-secondary/50 backdrop-blur-sm border border-white/5 rounded-full p-1.5">
                         <button
                             onClick={() => setUserType('client')}
@@ -119,7 +156,7 @@ export function Navbar({ onOpenAIChat }: NavbarProps) {
                     </div>
 
                     {isAuthenticated && user ? (
-                        <div className="relative">
+                        <div className="relative" ref={profileMenuRef}>
                             <button
                                 onClick={() => setIsProfileOpen(!isProfileOpen)}
                                 className="flex items-center gap-3 hover:bg-secondary/50 p-1.5 pr-3 rounded-full transition-all border border-transparent hover:border-border"
@@ -138,7 +175,7 @@ export function Navbar({ onOpenAIChat }: NavbarProps) {
                                         initial={{ opacity: 0, y: 10, scale: 0.95 }}
                                         animate={{ opacity: 1, y: 0, scale: 1 }}
                                         exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                                        className="absolute right-0 top-full mt-4 w-64 glass-card rounded-2xl p-2 z-50"
+                                        className="absolute right-0 top-full mt-3 w-64 glass-card rounded-2xl p-2 z-50 origin-top-right"
                                     >
                                         <div className="px-4 py-3">
                                             <p className="text-sm font-semibold text-foreground">{user.name}</p>
@@ -209,6 +246,16 @@ export function Navbar({ onOpenAIChat }: NavbarProps) {
                                     {link.name}
                                 </Link>
                             ))}
+                            {isAuthenticated && (
+                                <Link
+                                    to="/jobs/new"
+                                    className="flex items-center gap-2 text-base font-medium p-2 rounded-lg transition-colors text-emerald-400 hover:bg-emerald-500/10"
+                                    onClick={() => setIsMenuOpen(false)}
+                                >
+                                    <Briefcase className="h-4 w-4" />
+                                    Post a Job
+                                </Link>
+                            )}
                             <button
                                 onClick={() => {
                                     setIsMenuOpen(false);

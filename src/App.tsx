@@ -6,6 +6,8 @@ import { ProviderProfilePage } from '@/pages/ProviderProfilePage';
 import LoginPage from '@/pages/LoginPage';
 import SignupPage from '@/pages/SignupPage';
 import { AuthProvider } from '@/context/AuthContext';
+import NewJobPage from '@/pages/NewJobPage';
+import { ProtectedRoute } from '@/features/auth/components/ProtectedRoute';
 
 function App() {
     return (
@@ -19,6 +21,9 @@ function App() {
                         <Route path="/providers/:id" element={<ProviderProfilePage />} />
                         <Route path="/login" element={<LoginPage />} />
                         <Route path="/signup" element={<SignupPage />} />
+                        <Route element={<ProtectedRoute />}>
+                            <Route path="/jobs/new" element={<NewJobPage />} />
+                        </Route>
                     </Routes>
                 </Layout>
             </Router>

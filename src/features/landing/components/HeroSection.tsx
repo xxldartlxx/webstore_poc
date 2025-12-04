@@ -11,7 +11,7 @@ interface HeroSectionProps {
 
 export function HeroSection({ onPrimaryClick, onSecondaryClick, actions }: HeroSectionProps) {
     return (
-        <div className="flex flex-col items-center text-center max-w-5xl mx-auto space-y-12">
+        <div className="flex flex-col items-center text-center max-w-5xl mx-auto space-y-12 glass-card shiny-border glow-medium px-6 py-8 md:px-10 md:py-10">
             <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
